@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>روان وسارة - قصة صداقة</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffe0ec, #c9f6ff);
+      font-family: "Cairo", sans-serif;
+      padding: 40px;
+      color: #333;
+      text-align: center;
+    }
+
+    #chatBox {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      font-size: 20px;
+    }
+
+    .options {
+      margin-top: 20px;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ff91a4;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff6f91;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>قصة سارة وروان 💞</h1>
+
+  <div id="chatBox">
+    <p id="dialog">روان: سارة... فاكرة أول مرة اتكلمنا؟</p>
+    <div class="options" id="options">
+      <button onclick="choose(1)">أكيد فاكرة، كانت أحلى بداية!</button>
+      <button onclick="choose(2)">مش قوي، بس فاكرة إحساس الأمان</button>
+    </div>
+  </div>
+
+  <script>
+    let step = 0;
+
+    function choose(option) {
+      const dialog = document.getElementById("dialog");
+      const options = document.getElementById("options");
+      step++;
+
+      if (step === 1) {
+        if (option === 1) {
+          dialog.innerText = "روان: وأنا كمان... كنتِ أول حد حسيت معاه بالراحة 💗";
+        } else {
+          dialog.innerText = "روان: الإحساس أهم من التفاصيل، وأنا دايمًا حاسة بالأمان معاكي 🥺";
+        }
+
+        options.innerHTML = `
+          <button onclick="choose(3)">بتحسي إننا لسه زي زمان؟</button>
+          <button onclick="choose(4)">حاسه إننا بعدنا شويه الفترة دي...</button>
+        `;
+      }
+
+      else if (step === 2) {
+        if (option === 3) {
+          dialog.innerText = "روان: يمكن اتغيرنا، بس أنا لسه شايفة فيكي سارة اللي بحبها 💕";
+        } else {
+          dialog.innerText = "روان: عارفة... بس دايمًا قلبي بيرجعلك في الآخر 💔❤️";
+        }
+
+        options.innerHTML = `
+          <button onclick="choose(5)">تحبي نرجع نكلم بعض أكتر؟</button>
+          <button onclick="choose(6)">إنتي لسه بتعتبريني أعز صاحبة؟</button>
+        `;
+      }
+
+      else if (step === 3) {
+        if (option === 5) {
+          dialog.innerText = "روان: أكتر من أي وقت! أنا محتاجالك دايمًا يا سارة 🤍";
+        } else {
+          dialog.innerText = "روان: أكيد! إنتي مش مجرد صديقة، إنتي أختي اللي مخلفتهاش ماما 🫶";
+        }
+
+        options.innerHTML = `
+          <button onclick="choose(7)">وعد تفضلي معايا دايمًا؟</button>
+          <button onclick="choose(8)">طيب قوليلي آخر مرة افتكرتيني إمتى؟</button>
+        `;
+      }
+
+      else if (step === 4) {
+        if (option === 7) {
+          dialog.innerText = "روان: وعد من قلبي، مش بس صاحبتك، أنا دايمًا جنبك ♥️";
+        } else {
+          dialog.innerText = "روان: امبارح... وأنا بسمع أغنيتنا المفضلة 💞 افتكرت كل ضحكة بينا";
+        }
+
+        options.innerHTML = `
+          <p>✨ انتهت القصة، بس الكلام بينكم لسه مكمل ✨</p>
+          <p>سارة ❤️ روان</p>
+        `;
+      }
+    }
+  </script>
+
+</body>
+</html>
